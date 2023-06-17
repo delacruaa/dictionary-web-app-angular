@@ -1,0 +1,28 @@
+<div class="wrapper">
+    <div class="title_wrapper">
+        <div class="title" >
+            {{meaning.partOfSpeech}}
+        </div>
+        <div class="border"> </div>
+    </div>
+    <div class="meaning_wrapper">
+        <p class="meaning">Meaning</p>
+        <ul class="list">
+            <li *ngFor="let definition of meaning.definitions">{{definition.definition}}</li>
+        </ul>
+    </div>
+    <div class="synonims_wrapper" *ngIf="meaning.synonyms.length">
+        <p class="synonims">Synonyms</p>
+        <div class="word_wrapper">
+            <div  *ngFor="let synonyms of meaning.synonyms" class="word" (click)="fetchDataFromServer(synonyms)"  >{{synonyms}}</div>
+        </div>
+    </div>
+    <div class="synonims_wrapper" *ngIf="meaning.antonyms.length">
+       
+        <p class="synonims">Antonyms</p>
+        <div class="word_wrapper">
+            <div  *ngFor="let antonyms of meaning.antonyms" class="word" (click)="fetchDataFromServer(antonyms)" >{{antonyms}}</div>
+        </div>
+    </div>
+    
+</div>

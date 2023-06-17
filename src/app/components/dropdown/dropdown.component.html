@@ -1,0 +1,11 @@
+<div class="dropdown">
+    <div class="selected" (click)="onToggle()">
+       <p>{{selectedOption}}</p>
+       <img src="/assets/icon-arrow-down.svg" alt="arrow"  [ngClass]="isOpen? 'icon__down': 'icon__up'">
+    </div>
+    <ul class="select__list" *ngIf="isOpen">
+        <li  (click)="onSelect('Serif')"  [ngClass]="selectedOption=='Serif'? 'title_active': 'title1'">Serif</li>
+        <li  (click)="onSelect('Sans-Serif')" [ngClass]="selectedOption=='Sans-Serif'? 'title_active': 'title2'">Sans-Serif</li>
+        <li  (click)="onSelect('Mono')" [ngClass]="selectedOption=='Mono'? 'title_active': 'title3'">Mono</li>
+    </ul>
+</div>

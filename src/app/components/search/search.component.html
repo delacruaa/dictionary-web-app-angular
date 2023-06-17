@@ -1,0 +1,10 @@
+<div class="container">
+    <form class="wrapper" (submit)="fetchData()" >
+        <input  [(ngModel)]="inputValue"  name="inputValue" type="text" class="input"  (input)="clearError()" placeholder="Search..." />
+        <p *ngIf="notEmpty" class="error">Dont be empty </p>
+        <button type='submit' class="btn" >
+            <img src='/assets/icon-search.svg' alt="searchIcon"   />
+        </button>
+    </form>
+    
+</div>

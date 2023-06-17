@@ -1,0 +1,32 @@
+<div class="container">
+    <div class="loading" *ngIf="loading">Loading...</div>
+    <div *ngIf="error"  class="error_wrapper">
+        <h2 class="title">No definitions found</h2>
+        <p class="subtitle">Sorry pal, we couldn't find definitions for the word you were looking for. You can try the search again at later time or head to the web instead.</p>
+    </div>
+
+    <p *ngIf="!loading && !error && !wordMeaning.word " class="please_text">
+        Please write word
+    </p>
+    <div class="wrapper" *ngIf="!loading && !error && wordMeaning.word">
+        <div class="word_info">
+            <div class="text__wrapper">
+                <h1 class="title">{{wordMeaning.word}}</h1>
+                <p class="pronounce" *ngIf="pronounce" >{{pronounce}}</p>
+            </div>
+            <div class="audio" *ngIf="audioFile" (click)="playAudio()" >
+                <img src="/assets/icon-play.svg" alt="play" />
+            
+            </div>
+        </div>
+        <app-meaning *ngFor="let meaning of wordMeaning.meanings"  [meaning]="meaning" ></app-meaning>
+
+    </div>
+    <div class="divider" *ngIf="!loading && !error && wordMeaning?.sourceUrls?.length">
+         
+    </div>
+    <div class="source_wrapper"  *ngIf=" !loading && !error && wordMeaning?.sourceUrls?.length">
+        <p class="source_title">Source</p>
+        <a href={{wordMeaning.sourceUrls[0]}} class="link">{{wordMeaning.sourceUrls[0]}}</a>
+    </div>
+</div>

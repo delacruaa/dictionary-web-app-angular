@@ -1,0 +1,70 @@
+.wrapper {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    .first {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        .divider {
+            margin: 0 15px;
+            height: 100%;
+            border-left: 1px solid var(--light-gray-color);
+        }
+        .toggle {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            
+          }
+        .toggleButton {
+            width: 45px;
+            height: 20px;
+            border-radius:10px;
+            position: relative;
+            background-color: var(--gray-color);
+            transition: 0.2s linear;
+            border: none;
+            cursor: pointer;
+          }
+          
+         
+          
+          .toggleButton:before {
+            content: '';
+            display: inline-block;
+            width: 14px;
+            height: 14px;
+            background-color: var(--white-color);
+            border-radius: 100%;
+            position: absolute;
+            top: 50%;
+            left: 5px;
+            transition: 0.2s linear;
+          }
+          .toggleButton[data-active-theme='dark'] {
+            background-color: var(--color-primary);
+          }
+          .toggleButton[data-active-theme='light']:before {
+            transform: translateY(-50%) translateX(0);
+          }
+          
+          .toggleButton[data-active-theme='dark']:before {
+            transform: translateY(-50%) translateX(165%);
+          }
+          
+    }
+}
+
+@media(max-width:380px) {
+  .wrapper {
+
+    .first {
+
+        gap: 0;
+    }
+ 
+  }
+}

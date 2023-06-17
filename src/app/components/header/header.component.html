@@ -1,0 +1,16 @@
+<header>
+    <div class="container">
+        <div class="wrapper">
+            <img src="/assets/logo.svg" alt="logo" />
+            <div class="first">
+                <app-dropdown></app-dropdown>
+                <span class="divider"></span>
+                <div class="toggle">
+                    <button class="toggleButton" [attr.data-active-theme]="isDark? 'dark': 'light'" (click)="themeSwitcher()"
+                    ></button>
+                    <img src="/assets/icon-moon.svg" alt="moon">
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
